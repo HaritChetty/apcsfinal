@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
+/*
+* Notes:
+* 1. Probably should use keyframes in css for animations
+*   in the future instead of onload javascript functions
+*   may be smoother, also better?
+*
+* 2. Also, this is very messy CSS and there are multiple
+*   declarations in different elements that could be
+*   collapsed into shorter CSS but I didn't have much
+*   time and by the time I realized I should make it
+*   more efficient, it was too late and I didn't want
+*   to redo everything...
+*/
+
+body {
+  margin: 0;
+}
+
+::selection {
+  background-color: #959595;
+}
+
+.nav {
+  margin: 20px 30px 20px 30px;
+  text-align: center;
+}
+
+.subnav {
+  margin: 10px 0px;
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.07, 0.36, 0.45, 1.05) .5s;
+}
+
+.subnav a {
+  font-family: 'Montserrat', sans-serif;
+  color: #3F4850;
+  margin: 0px 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 18px;
+}
+
+.subnav a:hover {
+  background-color: #ded8d8;
+  border-radius: 2px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #2A2D34;
+  font-size: 35px;
+  padding-top: 25px;
+  font-weight: 600;
+  margin-top: 0;
+  opacity: 0;
+  transition: .32s cubic-bezier(0.25, 0.1, 0.25, 1) .56s;
+  transform: translateY(5%); /* replaced top: 20px bc of smoother */
+}
+
+#mainImg {
+  width: 100%;
+  margin-top: 20px;
+  filter: brightness(65%);
+  display: block;
+}
+
+.main1 {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out .55s;
+  overflow: hidden;
+}
+
+.main1 a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  font-size: 17px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  padding: 10px 30px;
+  border: 1px solid white;
+  transition: background-color .15s ease-in-out;
+}
+
+.main1 a:hover {
+  background-color: white;
+  color: #2A2D34;
+}
+
+.main2 {
+  background-color: #2a2928;
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  position: relative;
+  transition: opacity 0.4s ease-in-out .1s;
+  opacity: 0;
+}
+
+.main2 h2 {
+  color: #ffa600;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 38px;
+  font-weight: 100;
+  letter-spacing: 2.5px;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -30%);
+  opacity: 0;
+  transition: opacity .35s ease-in-out .35s;
+}
+
+.main2 .images {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -55%);
+}
+
+.main2 img {
+  width: 85px;
+  display: inline;
+  float: left;
+  margin: 10px 35px;
+  opacity: 0;
+  transition: opacity .5s ease-in-out; /* no delay for delay customization for each img element */
+}
+
+#googlelogo {
+  transition-delay: .45s;
+}
+
+#applelogo {
+  transition-delay: .52s;
+}
+
+#twitchlogo {
+  transition-delay: .59s;
+}
+
+.parallax {
+  width: 100%;
+  height: 800px;
+  background-image: url('images/room.jpg');
+  filter: brightness(85%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0;
+}
+
+footer {
+  width: 100%;
+  height: 90px;
+  background-color: #21201f;
+  opacity: 0;
+  transition: opacity .3s ease-in-out .2s;
+  position: relative;
+}
+
+#copyright {
+  left: 75px;
+  top: 35%;
+  transform: translateY(-65%);
+  position: absolute;
+  color: #c3bcbc;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 11.5px;
+  opacity: 0;
+  transition: opacity .4s ease-in-out .25s;
+}
+
+.botlinks {
+  position: absolute;
+  right: 75px;
+  top: 35%;
+
+}
+
+.botlinks a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  font-size: 13.5px;
+  color: #d4caca;
+  margin: 0 7px 0 7px;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+.botlinks a:hover {
+  color: #aba1a1;
+}
+
+#terms {
+  transition-delay: .4s;
+}
+
+#privacy {
+  transition-delay: .45s;
+}
+
+#contact {
+  transition-delay: .5s;
+}
+
+#about {
+  transition-delay: .55s;
+}
